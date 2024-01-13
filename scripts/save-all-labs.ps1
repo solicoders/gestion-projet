@@ -1,4 +1,8 @@
 
+# Emplacement des labs 
+$labs_web_path = $PSScriptRoot + "/../../"
+cd $labs_web_path
+
 Get-ChildItem . -Filter * | 
 Foreach-Object {
     # input
