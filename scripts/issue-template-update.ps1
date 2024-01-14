@@ -24,7 +24,7 @@ foreach($lab_web in $labs_web){
     $lab_web_full_name =$lab_web.FullName 
 
     # Ne pas toucher les template de lab-starter
-    if($lab_web.Name -eq "lab-starter"){continue}
+    if($lab_web.Name -eq "gestion-projet"){continue}
 
     Write-Host "Modifier les template de $lab_web_name"
     # confirm_to_continue("Modifier les template de $lab_web_name")
@@ -47,7 +47,7 @@ foreach($lab_web in $labs_web){
     }
 
     # # Copy files
-    copy-Item -Path ($labs_web_path + "lab-starter/.github/ISSUE_TEMPLATE/*") -Destination ($lab_web_full_name + "/.github/ISSUE_TEMPLATE/")
+    copy-Item -Path ($labs_web_path + "gestion-projet/.github/ISSUE_TEMPLATE/*") -Destination ($lab_web_full_name + "/.github/ISSUE_TEMPLATE/")
 
 }
 

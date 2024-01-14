@@ -1,7 +1,5 @@
 # Script de création d'un lab-web
 
-## issue : édition de script avec des caractètre en français
-# à  éditer avec Encoding : Windows 1252
 
 # issue : Problème d'affichage des caractère en français sur la console
 $PSDefaultParameterValues['*:Encoding'] = 'utf8'
