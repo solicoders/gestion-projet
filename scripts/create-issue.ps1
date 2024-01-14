@@ -61,13 +61,13 @@ Foreach-Object {
         $issue_titre = $item_name_array[1]
         $issue_number = $item_name_array[0]
         confirm_to_continue("Update de l'issue $issue_titre ")
-        gh issue edit $issue_number --body-file $item_full_name
+        gh issue edit $issue_number --add-label feature,new_issue --body-file $item_full_name
     }else{
 
         # Create issue
         $issue_titre = $item_name_array[0]
         confirm_to_continue("Création de l'issue : $issue_titre ")
-        gh issue create --title $issue_titre --body-file $item_full_name
+        gh issue create --title $issue_titre  --body-file $item_full_name
         
         # Update item file name
         $created_issue = find_issue_by_title($issue_titre)
