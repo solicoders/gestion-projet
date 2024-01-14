@@ -1,5 +1,9 @@
 # Clone all labs from organisation if not yet cloned
 
+# TODO : Changer ce nom par le nom de dossiers racine C:/solicoiders/
+$owner = "labs-web"
+$owner = "solicoders"
+
 function confirm_to_continue($message) {
     $title    = $message 
     $question = "Are you sure you want to proceed?"
@@ -17,10 +21,10 @@ cd $labs_web_path
 # Lists of labs 
 
 # Par défaut la commande repo list affiche 30 dépot
-$labs_web_list =  gh repo list labs-web --limit 100 --json name,url,defaultBranchRef | ConvertFrom-Json
+$labs_web_list =  gh repo list $owner --limit 100 --json name,url,defaultBranchRef | ConvertFrom-Json
  
 foreach ($lab_web in  $labs_web_list)  {
-    if($lab_web.defaultBranchRef.name = 'develop'){ 
+    # if($lab_web.defaultBranchRef.name = 'develop'){ 
         
         $lab_name =  $lab_web.name
         $lab_url = $lab_web.url
@@ -35,5 +39,5 @@ foreach ($lab_web in  $labs_web_list)  {
             git clone $lab_url
         }
        
-    }
+    # }
 }
